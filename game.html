@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Secret Laboratory - EscapeVerse</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="game.css">
+</head>
+
+<body class="game-page">
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <h2>ESCAPEVERSE</h2>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="rooms.html">Rooms</a>
+                <a href="how-to-play.html">How to Play</a>
+                <a href="achievements.html">Achievements</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Game Information -->
+        <section class="game-header">
+
+            <div>
+                
+                <p id="level-number">LEVEL 01</p>
+                <h1 id="level-title">SECRET LABORATORY</h1>
+
+            </div>
+
+            <div class="game-stats">
+
+                <div class="timer-box">
+                    ⏳ <span id="timer">05:00</span>
+                </div>
+
+                <div class="xp-box">
+                    ⭐ XP: <span id="xp">0</span>
+                </div>
+
+                <button id="hint-button" type="button">
+                    💡 HINT (3)
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- Interactive Room -->
+        <section class="game-container">
+
+            <div class="room-scene">
+
+                <!-- Room Background -->
+                <imgid="room-image"
+
+                    src="images/laboratory1.jpeg"
+                     alt="Escape room"
+                    class="room-background">
+
+                <!-- Clickable Objects -->
+
+                <button class="hotspot dna"
+                        data-object="dna"
+                        aria-label="Examine DNA chamber"
+                        type="button">
+                    🧬
+                </button>
+
+                <button class="hotspot computer"
+                        data-object="computer"
+                        aria-label="Examine computer"
+                        type="button">
+                    💻
+                </button>
+
+                <button class="hotspot flasks"
+                        data-object="flasks"
+                        aria-label="Examine chemical flasks"
+                        type="button">
+                    🧪
+                </button>
+
+                <button class="hotspot door"
+                        data-object="door"
+                        aria-label="Examine locked door"
+                        type="button">
+                    🔐
+                </button>
+
+            </div>
+
+            <!-- Game Instructions -->
+            <p class="game-instructions">
+                Click objects inside the laboratory to discover clues
+                and unlock the exit before time runs out.
+            </p>
+
+        </section>
+
+        <!-- Inventory -->
+        <section class="inventory-section">
+
+            <h2>🎒 YOUR INVENTORY</h2>
+
+            <div id="inventory">
+                <p>No clues collected yet.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Puzzle Popup -->
+    <div id="puzzle-modal" class="puzzle-modal" hidden>
+
+        <div class="puzzle-content"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="puzzle-title">
+
+            <button id="close-modal"
+                    class="close-modal"
+                    type="button"
+                    aria-label="Close puzzle">
+                ×
+            </button>
+
+            <h2 id="puzzle-title">MYSTERY OBJECT</h2>
+
+            <p id="puzzle-description">
+                You discovered something mysterious.
+            </p>
+
+            <div id="puzzle-area"></div>
+
+            <p id="puzzle-message" aria-live="polite"></p>
+
+        </div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="game.js"></script>
+
+</body>
+</html>

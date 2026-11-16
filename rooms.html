@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Choose Your Level - EscapeVerse</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="rooms.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <h2>ESCAPEVERSE</h2>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="rooms.html" class="active">Rooms</a>
+                <a href="how-to-play.html">How to Play</a>
+                <a href="achievements.html">Achievements</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="levels-page">
+
+        <div class="levels-heading">
+            <p>YOUR JOURNEY BEGINS HERE</p>
+            <h1>CHOOSE YOUR NIGHTMARE</h1>
+            <p>
+                Five terrifying levels.
+                Escape one room to unlock the next.
+            </p>
+        </div>
+
+        <section class="levels-grid">
+
+            <!-- LEVEL 1 -->
+            <article class="level-card" data-level="1">
+                <img src="images/laboratory.jpg"
+                     alt="Secret Laboratory">
+
+                <div class="level-info">
+                    <span class="level-number">LEVEL 01</span>
+                    <h2>SECRET LABORATORY</h2>
+                    <p>Easy • 5 Minutes</p>
+
+                    <a href="game.html?level=1"
+                       class="play-button">
+                        ENTER ROOM
+                    </a>
+                </div>
+            </article>
+
+            <!-- LEVEL 2 -->
+            <article class="level-card locked" data-level="2">
+                <img src="images/library.jpg"
+                     alt="Haunted Library">
+
+                <div class="level-info">
+                    <span class="level-number">LEVEL 02</span>
+                    <h2>HAUNTED LIBRARY</h2>
+                    <p>Medium • 6 Minutes</p>
+
+                    <a href="game.html?level=2"
+                       class="play-button">
+                        ENTER ROOM
+                    </a>
+                </div>
+            </article>
+
+            <!-- LEVEL 3 -->
+            <article class="level-card locked" data-level="3">
+                <img src="images/tomb.jpg"
+                     alt="Pharaoh's Tomb">
+
+                <div class="level-info">
+                    <span class="level-number">LEVEL 03</span>
+                    <h2>PHARAOH'S TOMB</h2>
+                    <p>Medium • 7 Minutes</p>
+
+                    <a href="game.html?level=3"
+                       class="play-button">
+                        ENTER ROOM
+                    </a>
+                </div>
+            </article>
+
+            <!-- LEVEL 4 -->
+            <article class="level-card locked" data-level="4">
+                <img src="images/space.jpg"
+                     alt="Space Station">
+
+                <div class="level-info">
+                    <span class="level-number">LEVEL 04</span>
+                    <h2>SPACE STATION</h2>
+                    <p>Hard • 8 Minutes</p>
+
+                    <a href="game.html?level=4"
+                       class="play-button">
+                        ENTER ROOM
+                    </a>
+                </div>
+            </article>
+
+            <!-- LEVEL 5 -->
+            <article class="level-card locked" data-level="5">
+                <img src="images/vault.jpg"
+                     alt="Final Vault">
+
+                <div class="level-info">
+                    <span class="level-number">LEVEL 05</span>
+                    <h2>FINAL VAULT</h2>
+                    <p>Extreme • 10 Minutes</p>
+
+                    <a href="game.html?level=5"
+                       class="play-button">
+                        ENTER ROOM
+                    </a>
+                </div>
+            </article>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>EscapeVerse | Web Programming Project 2026</p>
+    </footer>
+
+    <script src="rooms.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,363 @@
+
+/* ==================================
+   ESCAPEVERSE - GAME DESIGN
+   ================================== */
+
+.game-page {
+    background: #08070a;
+    color: white;
+    font-family: 'Rajdhani', Arial, sans-serif;
+}
+
+/* Game Header */
+
+.game-header {
+    max-width: 1300px;
+    margin: auto;
+    padding: 30px 5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.game-header p {
+    color: #ee454d;
+    letter-spacing: 3px;
+    font-size: 14px;
+}
+
+.game-header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 45px;
+    letter-spacing: 3px;
+    color: #f1eeee;
+}
+
+/* Timer, XP, Hints */
+
+.game-stats {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.timer-box,
+.xp-box {
+    background: #181014;
+    border: 1px solid #67242a;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.timer-box {
+    color: #ff535b;
+}
+
+.xp-box {
+    color: #e2c2c4;
+}
+
+#hint-button {
+    background: #81131e;
+    color: white;
+    border: 1px solid #c62e3b;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#hint-button:hover {
+    background: #be2330;
+}
+
+/* Laboratory Scene */
+
+.game-container {
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 5%;
+}
+
+.room-scene {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    background: #100a0e;
+    border: 2px solid #7b2931;
+    border-radius: 12px;
+    overflow: hidden;
+
+    box-shadow: 0 0 35px rgba(170, 0, 0, 0.18);
+}
+
+.room-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Slight dark overlay */
+
+.room-scene::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        transparent 55%,
+        rgba(0, 0, 0, 0.24)
+    );
+    pointer-events: none;
+}
+
+/* Clickable Objects */
+
+.hotspot {
+    position: absolute;
+    z-index: 2;
+
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(95, 0, 10, 0.65);
+    border: 2px solid #f15a63;
+    border-radius: 50%;
+
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+
+    box-shadow: 0 0 18px rgba(255, 0, 0, 0.5);
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s,
+        background 0.3s;
+
+    animation: cluePulse 2.5s infinite;
+}
+
+.hotspot:hover,
+.hotspot:focus-visible {
+    transform: scale(1.2);
+    background: #a31020;
+    box-shadow: 0 0 30px rgba(255, 50, 50, 0.8);
+}
+
+@keyframes cluePulse {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.35);
+    }
+
+    50% {
+        box-shadow: 0 0 28px rgba(255, 0, 0, 0.75);
+    }
+}
+
+/* Hotspot Positions */
+
+.hotspot.dna {
+    top: 35%;
+    left: 12%;
+}
+
+.hotspot.computer {
+    top: 44%;
+    left: 51%;
+}
+
+.hotspot.flasks {
+    top: 63%;
+    left: 27%;
+}
+
+.hotspot.door {
+    top: 44%;
+    left: 88%;
+}
+
+/* Instructions */
+
+.game-instructions {
+    text-align: center;
+    margin: 25px auto;
+    max-width: 800px;
+    color: #c5b7b7;
+    font-size: 19px;
+    line-height: 1.6;
+}
+
+/* Inventory */
+
+.inventory-section {
+    max-width: 1170px;
+    margin: 25px auto 60px;
+    padding: 25px;
+
+    background: #120d11;
+    border: 1px solid #502329;
+    border-radius: 10px;
+}
+
+.inventory-section h2 {
+    color: #f0e7e7;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+#inventory {
+    color: #c9baba;
+    font-size: 18px;
+}
+
+/* Puzzle Modal */
+
+.puzzle-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.86);
+}
+
+.puzzle-modal[hidden] {
+    display: none;
+}
+
+.puzzle-content {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+
+    background: #150d12;
+    border: 1px solid #bb303b;
+    border-radius: 12px;
+
+    padding: 40px 30px;
+    text-align: center;
+
+    box-shadow: 0 0 50px rgba(180, 0, 0, 0.25);
+}
+
+.puzzle-content h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 35px;
+    color: #e33b45;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.puzzle-content p {
+    color: #d5c9c9;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.close-modal {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+/* Puzzle Inputs */
+
+#puzzle-area input {
+    width: 100%;
+    padding: 13px;
+    margin: 18px 0;
+    background: #09070a;
+    border: 1px solid #87404a;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+#puzzle-area button {
+    padding: 13px 30px;
+    background: #9b1722;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#puzzle-area button:hover {
+    background: #d32330;
+}
+
+#puzzle-message {
+    margin-top: 15px;
+}
+
+/* Mobile Design */
+
+@media (max-width: 700px) {
+
+    .game-header h1 {
+        font-size: 34px;
+    }
+
+    .room-scene {
+        aspect-ratio: 4 / 3;
+    }
+
+    .hotspot {
+        width: 40px;
+        height: 40px;
+        font-size: 19px;
+    }
+
+    .game-stats {
+        gap: 8px;
+    }
+
+    .timer-box,
+    .xp-box,
+    #hint-button {
+        font-size: 15px;
+        padding: 9px 12px;
+    }
+
+    .inventory-section {
+        margin: 25px 5%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hotspot {
+        animation: none;
+        transition: none;
+    }
+}

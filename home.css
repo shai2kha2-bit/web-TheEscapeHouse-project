@@ -1,0 +1,354 @@
+
+/* ESCAPEVERSE - HOME PAGE */
+
+.home-page {
+    background: #050406;
+    color: white;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+/* Navigation */
+
+.home-header {
+    position: relative;
+    z-index: 10;
+    background: #090709;
+    border-bottom: 1px solid #4c1519;
+    padding: 14px 6%;
+}
+
+.home-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.home-nav h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    color: #ca2027;
+    letter-spacing: 3px;
+}
+
+.home-links {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+
+.home-nav .home-links a {
+    color: #d0caca;
+    font-size: 13px;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    margin: 0;
+    transition: color 0.3s;
+}
+
+.home-nav .home-links a:hover,
+.home-nav .home-links a.active {
+    color: #ff4149;
+}
+
+/* Video Hero */
+
+.intro-hero {
+    height: 85vh;
+    min-height: 600px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background: #12090b url("images/home.jpeg")
+                center / cover no-repeat;
+}
+
+.intro-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* Dark cinematic overlay */
+
+.intro-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.35),
+        rgba(5, 0, 0, 0.55),
+        rgba(0, 0, 0, 0.88)
+    );
+    z-index: 1;
+}
+
+/* Moving red fog effect */
+
+.intro-fog {
+    position: absolute;
+    inset: -20%;
+    background: radial-gradient(
+        ellipse at 50% 80%,
+        rgba(160, 0, 0, 0.22),
+        transparent 65%
+    );
+    animation: fogMove 9s ease-in-out infinite alternate;
+    z-index: 2;
+    pointer-events: none;
+}
+
+@keyframes fogMove {
+    from {
+        transform: translateX(-6%) scale(1);
+        opacity: 0.35;
+    }
+
+    to {
+        transform: translateX(6%) scale(1.2);
+        opacity: 0.85;
+    }
+}
+
+/* Content */
+
+.intro-content {
+    position: relative;
+    z-index: 3;
+    padding: 30px 20px;
+    animation: introAppear 1.6s ease-out both;
+}
+
+@keyframes introAppear {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.intro-label {
+    font-size: 13px;
+    letter-spacing: 5px;
+    color: #e1abab;
+    margin-bottom: 15px;
+}
+
+.intro-content h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(65px, 12vw, 150px);
+    letter-spacing: 8px;
+    line-height: 1;
+    color: #c91620;
+    text-shadow:
+        5px 7px 0 #160000,
+        0 0 30px rgba(170, 0, 0, 0.55);
+}
+
+.intro-content h2 {
+    font-size: clamp(20px, 3vw, 34px);
+    letter-spacing: 8px;
+    margin-top: 20px;
+    color: white;
+}
+
+/* Animated Start Button */
+
+.intro-start {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 38px;
+    padding: 16px 45px;
+    background: #850c15;
+    border: 1px solid #e44249;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    box-shadow: 0 0 20px rgba(200, 0, 0, 0.4);
+    animation: buttonPulse 2.5s infinite;
+    transition: transform 0.3s;
+}
+
+.intro-start:hover {
+    background: #c51a27;
+    color: white;
+    transform: scale(1.07);
+}
+
+@keyframes buttonPulse {
+    0%, 100% {
+        box-shadow: 0 0 12px rgba(200, 0, 0, 0.35);
+    }
+
+    50% {
+        box-shadow: 0 0 32px rgba(255, 0, 0, 0.65);
+    }
+}
+
+.intro-description {
+    max-width: 620px;
+    margin: 30px auto 0;
+    font-size: 19px;
+    line-height: 1.7;
+    color: #d1caca;
+}
+
+.intro-warning {
+    margin-top: 22px;
+    color: #ed4545;
+    font-size: 14px;
+    letter-spacing: 4px;
+}
+
+/* Scroll Indicator */
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    color: #bbb;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.scroll-indicator span {
+    display: block;
+    font-size: 25px;
+    animation: arrowMove 1.5s infinite alternate;
+}
+
+@keyframes arrowMove {
+    to {
+        transform: translateY(8px);
+    }
+}
+
+/* Second Section */
+
+.intro-next {
+    min-height: 400px;
+    text-align: center;
+    padding: 110px 20px;
+    background: linear-gradient(#080608, #22090d);
+}
+
+.intro-next p {
+    color: #d64b53;
+    letter-spacing: 4px;
+}
+
+.intro-next h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(40px, 6vw, 75px);
+    margin: 20px 0 30px;
+}
+
+.intro-next a {
+    color: #f36b70;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.intro-next a:hover {
+    color: white;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .home-nav {
+        flex-direction: column;
+    }
+
+    .home-links {
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .intro-content h1 {
+        letter-spacing: 3px;
+    }
+
+    .intro-description {
+        font-size: 16px;
+    }
+
+    .intro-hero {
+        min-height: 720px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .intro-content,
+    .intro-fog,
+    .intro-start,
+    .scroll-indicator span {
+        animation: none;
+    }
+}
+
+/* Cinematic moving background */
+
+.intro-hero {
+    animation: scaryZoom 18s ease-in-out infinite alternate;
+}
+
+@keyframes scaryZoom {
+    from {
+        background-size: 100% auto;
+    }
+
+    to {
+        background-size: 115% auto;
+    }
+}
+
+/* Flickering red horror light */
+
+.intro-overlay {
+    animation: horrorLight 5s ease-in-out infinite;
+}
+
+@keyframes horrorLight {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    45% {
+        opacity: 0.75;
+    }
+
+    50% {
+        opacity: 0.92;
+    }
+
+    55% {
+        opacity: 0.65;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .intro-hero,
+    .intro-overlay {
+        animation: none;
+    }
+}
+

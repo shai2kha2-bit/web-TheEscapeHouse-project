@@ -1,0 +1,161 @@
+
+/* ESCAPEVERSE - LEVEL SELECTION */
+
+.levels-page {
+    min-height: 100vh;
+    padding: 70px 6%;
+    background: linear-gradient(
+        180deg, #08080a, #21090c, #08080a
+    );
+}
+
+.levels-heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.levels-heading > p:first-child {
+    color: #ed535a;
+    letter-spacing: 4px;
+    font-size: 13px;
+}
+
+.levels-heading h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(42px, 6vw, 78px);
+    color: #d21d27;
+    letter-spacing: 5px;
+    margin: 15px 0;
+}
+
+.levels-heading > p:last-child {
+    color: #c9bebe;
+    font-size: 18px;
+}
+
+.levels-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.level-card {
+    background: #130e12;
+    border: 1px solid #64242a;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.35s;
+}
+
+.level-card:not(.locked):hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 30px #a008124d;
+}
+
+.level-card img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    display: block;
+}
+
+.level-info {
+    padding: 24px;
+}
+
+.level-number {
+    color: #e34951;
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+.level-info h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 27px;
+    letter-spacing: 2px;
+    margin: 12px 0;
+}
+
+.level-info p {
+    color: #aaa;
+    margin-bottom: 22px;
+}
+
+.play-button {
+    display: inline-block;
+    background: #920e18;
+    color: white;
+    padding: 13px 28px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 4px;
+}
+
+.play-button:hover {
+    background: #d51f2a;
+    color: white;
+}
+
+/* Locked levels */
+
+.level-card.locked img {
+    filter: grayscale(0.8) brightness(0.35);
+}
+
+.level-card.locked .play-button {
+    background: #373238;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+.level-card.locked {
+    border-color: #292429;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+    .levels-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .levels-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Scary background for level selection */
+
+.levels-page {
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.45),
+            rgba(15, 0, 0, 0.65)
+        ),
+        url("images/rooms-bg.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Keep room cards readable */
+
+.level-card {
+    background: rgba(15, 10, 14, 0.94);
+    backdrop-filter: blur(5px);
+}
+
+/* Cinematic heading */
+
+.levels-heading h1 {
+    text-shadow:
+        3px 4px 0 #000,
+        0 0 25px rgba(200, 0, 0, 0.4);
+}
