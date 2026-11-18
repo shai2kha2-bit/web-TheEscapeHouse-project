@@ -70,7 +70,7 @@
             <div class="room-scene">
 
                 <!-- Room Background -->
-                <imgid="room-image"
+                <img id="room-image"
 
                     src="images/laboratory1.jpeg"
                      alt="Escape room"
@@ -158,8 +158,73 @@
 
     </div>
 
-    <!-- JavaScript -->
-    <script src="game.js"></script>
+    
+    <script>
+        const selectedLevel = new URLSearchParams(
+            window.location.search
+        ).get("level");
+
+        const levelScript = document.createElement("script");
+
+        if (selectedLevel === "2") {
+            levelScript.src = "library.js";
+        } else {
+            levelScript.src = "game.js";
+        }
+
+        document.body.appendChild(levelScript);
+    </script>
+
+    <button class="hotspot door"
+        data-object="door"
+        aria-label="Examine locked door"
+        type="button">
+    🔐
+</button>
+
+    <!-- LEVEL 2: HAUNTED LIBRARY -->
+
+    <button class="hotspot bookshelf library-object"
+            data-object="bookshelf"
+            type="button" hidden>
+        📚
+    </button>
+
+    <button class="hotspot clock library-object"
+            data-object="clock"
+            type="button" hidden>
+        🕰️
+    </button>
+
+    <button class="hotspot manuscript library-object"
+            data-object="manuscript"
+            type="button" hidden>
+        📜
+    </button>
+
+    <button class="hotspot library-door library-object"
+            data-object="library-door"
+            type="button" hidden>
+        🔐
+    </button>
+
+    <script>
+        const selectedLevel = new URLSearchParams(
+            window.location.search
+        ).get("level");
+
+        const levelScript = document.createElement("script");
+
+        if (selectedLevel === "2") {
+            levelScript.src = "library.js";
+        } else {
+            levelScript.src = "game.js";
+        }
+
+        document.body.appendChild(levelScript);
+    </script>
+
+
 
 </body>
 </html>

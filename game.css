@@ -361,3 +361,30 @@
         transition: none;
     }
 }
+
+/* Haunted Library Buttons */
+
+.hotspot[hidden] {
+    display: none !important;
+}
+
+.hotspot.bookshelf {
+    top: 29%;
+    left: 16%;
+}
+
+.hotspot.clock {
+    top: 27%;
+    left: 68%;
+}
+
+.hotspot.manuscript {
+    top: 70%;
+    left: 43%;
+}
+
+.hotspot.library-door {
+    top: 47%;
+    left: 88%;
+}
+
